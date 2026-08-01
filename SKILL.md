@@ -3,8 +3,9 @@ name: 6hats
 description: >
   Use when the user asks for a "6 hats" / "six thinking hats" / "шесть шляп"
   discussion, wants to brainstorm, analyze, or review a topic/idea/decision
-  from multiple perspectives, asks for a structured pros/cons/risk/creativity
-  workshop, or wants more than a single one-sided opinion on a decision.
+  from multiple perspectives, asks for a structured pros/cons/trade-offs/risk/
+  creativity workshop, or wants a Blue Hat framed discussion with rounds,
+  takeaways, and optional follow-up rounds or extra constraints.
 ---
 
 # Six Thinking Hats

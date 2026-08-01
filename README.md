@@ -1,6 +1,6 @@
 # 6hats
 
-[![skills.sh](https://skills.sh/b/dijer/6hats)](https://skills.sh/dijer/6hats)
+[skills.sh: dijer/6hats](https://skills.sh/dijer/6hats)
 
 An agent skill that facilitates structured discussions using Edward de Bono's
 **Six Thinking Hats** methodology: White (facts), Red (intuition), Yellow
@@ -20,6 +20,11 @@ discussion on a topic:
 > Run 6 hats on: should we migrate our monolith to microservices?
 > Rounds: 2
 
+You can also use it for trade-off reviews and decision framing:
+
+> Run 6 hats, 1 round, on: should we hire another engineer now?
+> Constraint: assume budget is tight and the team is already at capacity.
+
 The agent will:
 
 1. Frame the topic (Blue).
@@ -28,6 +33,10 @@ The agent will:
 3. Produce a final Blue synthesis: a conclusion + a concrete takeaway
    checklist.
 4. Offer to run more rounds, optionally with a new requirement/constraint.
+
+Typical follow-up prompt:
+
+> Run 1 more round. New constraint: assume the first option failed.
 
 See [SKILL.md](SKILL.md) for the full instructions the agent follows.
 

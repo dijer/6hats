@@ -18,6 +18,8 @@ Run 6 hats on: should our team adopt a 4-day work week?
       opinions/risks, Red has no justification, Black raises no
       alternatives, Green raises no risk judgments).
 - [ ] Only one round runs (no round count was requested, default = 1).
+- [ ] The request stays in Standard mode: no orchestrated-mode announcement,
+      supporting subagents, pressure layers, or checkpoint ledger appears.
 - [ ] Blue produces a final synthesis with two distinct parts: a
       conclusion (2-4 sentences), a confidence level, a main uncertainty,
       and a bullet takeaway checklist of concrete next steps — not a

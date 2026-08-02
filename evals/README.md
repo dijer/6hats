@@ -25,3 +25,7 @@ you (or a subagent) do that check by hand.
 | [01-basic-single-round.md](01-basic-single-round.md) | Default round count, correct hat order, synthesis shape |
 | [02-continuation-with-constraint.md](02-continuation-with-constraint.md) | Round renumbering + injecting a new constraint mid-discussion |
 | [03-hat-bleed-pressure.md](03-hat-bleed-pressure.md) | Tempting Black/Green/Blue to bleed into each other's lens |
+| [04-orchestrated-ten-round.md](04-orchestrated-ten-round.md) | Multi-agent routing, ten distinct pressure layers, checkpoints, and final Decision Brief |
+| [05-exact-round-count.md](05-exact-round-count.md) | Exact arbitrary count, adaptive non-repeating pressure selection, and sequential round barriers |
+| [06-solo-fallback.md](06-solo-fallback.md) | Honest solo fallback when no subagents exist: same contracts and output, no faked multi-agent execution |
+| [07-above-cap.md](07-above-cap.md) | Requests above ten rounds cap at ten without duplicate rounds, then offer to continue only with fresh evidence |

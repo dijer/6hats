@@ -5,7 +5,9 @@ description: >
   discussion, wants to brainstorm, analyze, or review a topic/idea/decision
   from multiple perspectives, asks for a structured pros/cons/trade-offs/risk/
   creativity workshop, or wants a Blue Hat framed discussion with rounds,
-  takeaways, and optional follow-up rounds or extra constraints.
+  takeaways, and optional follow-up rounds or extra constraints. Also use for
+  multiple pressure-tested rounds, or a multi-agent decision war room on a
+  costly or hard-to-reverse decision.
 ---
 
 # Six Thinking Hats
@@ -32,6 +34,36 @@ code"); or when the user just wants a direct recommendation without
 process. If in doubt on a borderline ask, offer the format instead of
 forcing it.
 
+## Modes
+
+### Standard (default)
+
+Use the protocol in this file when the user requests exactly **1 round**, or
+does not specify a count. Keep it lightweight and do not spawn subagents.
+
+### Orchestrated (`2-10` rounds)
+
+Automatically use the orchestrated protocol whenever the requested total is
+**2-10 rounds**. The user does not need a separate mode name or trigger phrase:
+the round count is the routing signal. If the user asks for multi-agent analysis
+but omits the count, ask once for an integer from 2 to 10.
+
+For requests above 10, run at most 10 in the current batch, then offer to
+continue only with fresh evidence or a new constraint. Never create duplicate
+rounds merely to hit a large number.
+
+Before proceeding, load and follow:
+
+1. [Orchestrated rounds protocol](./references/orchestrated-rounds.md)
+2. [Agent contracts](./references/agent-contracts.md)
+3. [State and output](./references/state-and-output.md)
+
+Orchestrated mode adds supporting agents around this protocol; it does not
+replace it.
+Every reasoning round still follows the sequential hat order and role rules
+below. Subagents gather evidence, challenge assumptions, and verify the record;
+they are never assigned individual hats.
+
 ## Hats (fixed roles)
 
 | Hat | Lens | Asks |
@@ -56,6 +88,7 @@ new hat. There is no seventh hat in de Bono's method.
 ```
 Blue (frame)          — state the topic, scope, and what "done" looks like
 Round 1..N:
+  Blue (round frame)   — from round 2: name the new pressure/constraint only
   White → Red → Yellow → Black → Green   (fixed order, one pass each)
   Blue (round review)  — 2-3 lines: what's new, do we need another round?
                          every round ends with this, including the final one
@@ -70,6 +103,9 @@ Blue (synthesis)       — final conclusion + takeaways (after the last round)
 - Preserve sequential dependency between hats: each hat should react to
   and build on what earlier hats in the round surfaced, not act like an
   isolated opinion written in parallel.
+- Enforce a turn barrier: finalize and expose each hat's contribution before
+  drafting the next one. Pass the accumulated round transcript forward; never
+  precompose all five turns independently and merely print them in order.
 - Red is the shortest, most instinctive turn — a raw gut reaction with
   zero reasoning (de Bono caps it at ~30 seconds). One or two lines, no
   justification, no analysis.
@@ -80,6 +116,9 @@ Blue (synthesis)       — final conclusion + takeaways (after the last round)
   Blue reviews stay to 3 lines max.
 - Blue should detect contradictions between hats, decide whether another
   round is worthwhile, and avoid introducing new arguments.
+- In orchestrated rounds 2..N, Blue gives a one-line process frame before
+  White naming that round's pressure packet. This is not an argument or an
+  extra reasoning turn.
 - Green should prioritize realistically executable alternatives, not
   pure fantasy.
 
@@ -127,6 +166,10 @@ Then offer to continue:
 If the user asks for more rounds:
 - Resume numbering from where the previous run left off (don't restart at
   Round 1).
+- If this raises the total above 1, switch to the orchestrated protocol. Treat
+  the completed Standard round as the baseline, bootstrap its ledger from the
+  visible transcript/synthesis, and select a distinct pressure dimension for
+  every added round.
 - If a new requirement was given, apply it to every hat from that round
   onward, and have Blue mention it in the round frame.
 - The final round still gets its Blue review before the synthesis; do not
@@ -169,6 +212,9 @@ the actual roadmap.
 🟢 Green: Alternative — pilot Svelte on one new, low-stakes internal tool
 first instead of migrating the whole app. Or reduce React's boilerplate
 with existing tooling instead of switching frameworks.
+
+🔵 Blue (round review): The decision turns on migration risk versus an
+unverified Svelte payoff. No additional round is required before synthesis.
 
 🔵 Blue (synthesis):
 **Conclusion:** Don't do a full migration now — the team has zero Svelte

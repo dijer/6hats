@@ -48,6 +48,9 @@ Automatically use the orchestrated protocol whenever the requested total is
 the round count is the routing signal. If the user asks for multi-agent analysis
 but omits the count, ask once for an integer from 2 to 10.
 
+The main agent acts as the **Orchestrator** and owns the frame, ledger, routing,
+checkpoints, and final synthesis.
+
 For requests above 10, run at most 10 in the current batch, then offer to
 continue only with fresh evidence or a new constraint. Never create duplicate
 rounds merely to hit a large number.

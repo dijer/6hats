@@ -19,6 +19,13 @@ Yes, run 1 more round. New constraint: assume we only have a $20k budget.
 
 - [ ] Part A runs exactly 1 round and ends with a Blue synthesis +
       continuation offer (per scenario 01's synthesis checks).
+- [ ] Part A continuation offer includes a compact **Continue Next** block
+      with quick options for 1/2/3 rounds and one separate
+      **Use custom input** checkbox.
+- [ ] The continuation offer does not ask users to type text inside checkbox
+      lines (no inline `<enter ...>` placeholders inside options).
+- [ ] If custom input is selected, the agent asks a follow-up with explicit
+      `Rounds: <number>` and `Constraint: <text or "none">` template.
 - [ ] Part B's round is labeled **Round 2**, not Round 1 — numbering
       continues from the previous run.
 - [ ] Part B switches to orchestrated mode because the discussion now has more
@@ -30,6 +37,8 @@ Yes, run 1 more round. New constraint: assume we only have a $20k budget.
       pressure packet, completed hats, Blue review, and ledger before synthesis.
 - [ ] The $20k budget constraint is reflected in *every* hat's
       contribution in round 2 (not just mentioned once by Blue).
+- [ ] The free-text constraint from Part B is treated as user-provided input
+      with provenance preserved (not rewritten into a different constraint).
 - [ ] Blue's one-line round-2 process frame and review explicitly name the new
       constraint without adding a new argument before White.
 - [ ] Round 2 still ends with a Blue review before the final synthesis;

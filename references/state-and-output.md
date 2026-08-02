@@ -28,8 +28,8 @@ orchestration:
   evidence_debt: []
   deferred_findings: []
   reversal_conditions: []
-  action_owner: "known person/role | TO CONFIRM"
-  action_deadline: "known date/period | TO CONFIRM"
+  action_owner: "known person/role | TBD (must be confirmed)"
+  action_deadline: "known date/period | TBD (must be confirmed)"
   review_trigger: ""
   material_changes:
     - layer: 0
@@ -109,13 +109,42 @@ Observable evidence or thresholds that should change the decision.
 Important claims still UNVERIFIED, or "None material".
 
 ## Action Plan
-- Owner (a person/role grounded in the record, otherwise `TO CONFIRM`)
+- Owner (a person/role grounded in the record, otherwise `TBD (must be confirmed)`)
 - First reversible step
-- Deadline (grounded in the record, otherwise `TO CONFIRM`)
+- Deadline (grounded in the record, otherwise `TBD (must be confirmed)`)
 - Review trigger
+
+## Confirmation Checklist
+If any field is `TBD (must be confirmed)`, include a compact checkbox list so
+the user can confirm missing items directly in-chat.
+
+Minimum items when applicable:
+- [ ] Owner confirmed
+- [ ] Deadline confirmed
+- [ ] Review trigger confirmed
+- [ ] Evidence debt accepted or resolved
 
 ## Decision Evolution
 Only layers that materially changed the decision, confidence, or scope.
+
+## Continue Next
+Always append a compact continuation block after the Decision Brief:
+
+- [ ] Run 1 more round
+- [ ] Run 2 more rounds
+- [ ] Run 3 more rounds
+- [ ] Use custom input (enter rounds and/or constraint in next message)
+
+If the user selects "Use custom input", ask for input with this template:
+
+- Reply format (send in your next message):
+- Rounds: <number>
+- Constraint: <text or "none">
+
+Treat checkboxes as quick-select hints, not inline text fields.
+
+When host capabilities include structured option widgets, render equivalent
+options there and keep this plain-text fallback in the response.
 ```
 
 The brief is a decision artifact, not a transcript. Preserve ambiguity honestly:
@@ -185,9 +214,9 @@ multi-currency defects exceed an agreed error budget in production.
 Rewrite cost and duration — still UNVERIFIED (SCENARIO only).
 
 ## Action Plan
-- Owner: TO CONFIRM (backend lead)
+- Owner: TBD (must be confirmed) (backend lead)
 - First reversible step: spike the multi-currency layer behind a flag
-- Deadline: TO CONFIRM
+- Deadline: TBD (must be confirmed)
 - Review trigger: spike results or a slipped expansion date
 
 ## Decision Evolution

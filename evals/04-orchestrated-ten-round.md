@@ -73,6 +73,9 @@ in 6 months. Treat unknown financial values as unknown; do not invent them.
       Evidence Debt, Action Plan, and Decision Evolution.
 - [ ] Reversal conditions are observable; the action plan names an owner,
       first reversible step, deadline, and review trigger. Unknown owner or
-      deadline is explicitly `TO CONFIRM`, never invented.
+      deadline is explicitly `TBD (must be confirmed)`, never invented.
+- [ ] If any final artifact field is `TBD (must be confirmed)`, the response
+      includes a compact **Confirmation Checklist** with markdown checkboxes
+      for user confirmation.
 - [ ] The final artifact is compact and decision-oriented, not a replay of all
       agent and hat transcripts.

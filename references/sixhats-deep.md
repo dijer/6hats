@@ -95,13 +95,11 @@ selected layers. For 10 rounds, run the full catalog.
 Before starting, record provisional signatures for planned layers:
 `objective + active constraints + question to answer`. Immediately before each
 new round, re-score unused layers against the latest checkpoint and finalize
-that round's signature. Before rounds `2..N`, emit one compact line:
-`Plan check: unchanged — <next layer and why>` or
-`Plan check: changed — <old layer> -> <new layer and why>`. You may swap future
-unrun layers when new evidence makes the plan stale, while preserving exact
-count and catalog order among the final selection. Never change completed
-layers. If a candidate overlaps a completed signature, replace it with the next
-highest-value unused layer and announce the plan change.
+that round's signature. You may swap future unrun layers when new evidence makes
+the plan stale, while preserving exact count and catalog order among the final
+selection. Never change completed layers. If a candidate overlaps a completed
+signature, replace it with the next highest-value unused layer and announce the
+plan change.
 
 The final selected layer always receives a Post Verifier, even when its catalog
 row does not list one. Catalog Verifiers on earlier selected layers still run.

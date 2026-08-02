@@ -93,6 +93,16 @@ See [SKILL.md](SKILL.md) for the full instructions the agent follows.
 manually confirming the skill holds up (round order, hat separation,
 synthesis shape, continuation behavior). See [evals/README.md](evals/README.md).
 
+## Contribution flow
+
+- Use the PR checklist in [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md).
+- Keep requirement-to-eval coverage updated in [evals/TRACEABILITY.md](evals/TRACEABILITY.md).
+- Run a lightweight local docs check before opening a PR:
+
+```bash
+node ./scripts/check-docs.mjs
+```
+
 ## License
 
 [MIT](LICENSE)

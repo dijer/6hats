@@ -1,7 +1,7 @@
 ---
 name: 6hats
 description: >
-  Use when the user asks for a "6 hats" / "six thinking hats" / "шесть шляп"
+  Use when the user asks for a "6 hats" / "six thinking hats"
   discussion, wants to brainstorm, analyze, or review a topic/idea/decision
   from multiple perspectives, asks for a structured pros/cons/trade-offs/risk/
   creativity workshop, or wants a Blue Hat framed discussion with rounds,
@@ -22,7 +22,7 @@ tempting to add a caveat that belongs to another hat. Core principle:
 
 ## When to Use
 
-- User explicitly invokes "6 hats" / "six thinking hats" / "шесть шляп".
+- User explicitly invokes "6 hats" / "six thinking hats".
 - User wants a decision or idea stress-tested from multiple angles instead
   of a single blended opinion — ideally signalled explicitly (names the
   method, or asks to break it down by pros/cons/risks/alternatives).
@@ -165,6 +165,44 @@ Then offer to continue:
 > Ask the user: run **N more rounds**? Optionally with a new
 > requirement/constraint to inject (e.g. a fresh angle, a tightened
 > constraint, new information).
+
+Use an adaptive continuation block so the user can respond quickly without
+rewriting instructions. Append this block after synthesis:
+
+```text
+Continue Next
+- [ ] Run 1 more round
+- [ ] Run 2 more rounds
+- [ ] Run 3 more rounds
+- [ ] Use custom input (enter rounds and/or constraint in next message)
+```
+
+If the user selects "Use custom input", ask for input in a follow-up message
+using this compact template:
+
+```text
+Reply format (send in your next message):
+Rounds: <number>
+Constraint: <text or "none">
+```
+
+Rules:
+- Keep the block compact (5 lines max after the heading).
+- Treat checkboxes as quick-select hints, not inline input fields.
+- If the host supports structured options UI, mirror these options there,
+  but still print a plain-text fallback block.
+- If the user provides only free text (no round count), ask one compact
+  follow-up for round count when required by mode routing.
+
+If the final output contains any `TBD (must be confirmed)` fields, append a
+short **Confirmation Checklist** with markdown checkboxes so the user can
+explicitly confirm outstanding items in-chat.
+
+Minimum checklist items when applicable:
+- [ ] Owner confirmed
+- [ ] Deadline confirmed
+- [ ] Review trigger confirmed
+- [ ] Any remaining evidence-debt item accepted or resolved
 
 If the user asks for more rounds:
 - Resume numbering from where the previous run left off (don't restart at

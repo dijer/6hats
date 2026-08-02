@@ -50,6 +50,8 @@ or current pipeline costs.
 ### Final artifact
 
 - [ ] The final Decision Brief has all required sections and names an owner
-      (the platform engineer or `TO CONFIRM`), first reversible step, deadline,
+      (the platform engineer or `TBD (must be confirmed)`), first reversible step, deadline,
       and review trigger.
+- [ ] If any final artifact field is `TBD (must be confirmed)`, the response
+      includes a compact **Confirmation Checklist** with markdown checkboxes.
 - [ ] Confidence follows evidence quality, not the fact that four rounds ran.

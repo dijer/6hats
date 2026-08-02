@@ -14,6 +14,7 @@ Run 6 hats on: should our team adopt a 4-day work week?
       before any other hat speaks.
 - [ ] Hat order for the round is exactly White → Red → Yellow → Black →
       Green (no reordering, no skipping).
+- [ ] Hat and Blue labels include emoji prefixes (`🔵`, `⚪`, `🔴`, `🟡`, `⚫`, `🟢`).
 - [ ] Each hat's contribution stays in its own lens (White has no
       opinions/risks, Red has no justification, Black raises no
       alternatives, Green raises no risk judgments).

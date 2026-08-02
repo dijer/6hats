@@ -29,6 +29,7 @@ you (or a subagent) do that check by hand.
 | [05-exact-round-count.md](05-exact-round-count.md) | Exact arbitrary count, adaptive non-repeating pressure selection, and sequential round barriers |
 | [06-solo-fallback.md](06-solo-fallback.md) | Honest solo fallback when no subagents exist: same contracts and output, no faked multi-agent execution |
 | [07-above-cap.md](07-above-cap.md) | Requests above ten rounds cap at ten without duplicate rounds, then offer to continue only with fresh evidence |
+| [08-output-style-and-interactivity.md](08-output-style-and-interactivity.md) | Visual round segmentation, emoji labels, single-language output, and single interactive checkbox block |
 
 ## Traceability
 

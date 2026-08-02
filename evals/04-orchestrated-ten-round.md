@@ -34,6 +34,10 @@ in 6 months. Treat unknown financial values as unknown; do not invent them.
       White → Red → Yellow → Black → Green, followed by Blue review. Only layer
       10 adds the single final synthesis after its Verifier pass; no continuation
       prompt interrupts layers 1-9.
+- [ ] Every hat and Blue section is labeled with required emoji prefixes:
+      `🔵 Blue`, `⚪ White`, `🔴 Red`, `🟡 Yellow`, `⚫ Black`, `🟢 Green`.
+- [ ] Rounds are visually separated with explicit round headings
+      (`### Round N — Layer`) and separators between rounds.
 - [ ] Round numbering continues from 1 through 10 and later hats build on
       earlier hats in the same round.
 - [ ] Each round applies its distinct pressure dimension; the ten rounds are
@@ -75,7 +79,8 @@ in 6 months. Treat unknown financial values as unknown; do not invent them.
       first reversible step, deadline, and review trigger. Unknown owner or
       deadline is explicitly `TBD (must be confirmed)`, never invented.
 - [ ] If any final artifact field is `TBD (must be confirmed)`, the response
-      includes a compact **Confirmation Checklist** with markdown checkboxes
-      for user confirmation.
+      includes a compact **Confirmation Items** plain list (non-interactive).
+- [ ] Interactive checkboxes appear only in **Continue Next**; confirmation
+      section does not use checkbox syntax.
 - [ ] The final artifact is compact and decision-oriented, not a replay of all
       agent and hat transcripts.

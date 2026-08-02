@@ -91,10 +91,12 @@ new hat. There is no seventh hat in de Bono's method.
 ```
 Blue (frame)          — state the topic, scope, and what "done" looks like
 Round 1..N:
+  Round heading        — `### Round N — <Layer name>`
   Blue (round frame)   — from round 2: name the new pressure/constraint only
   White → Red → Yellow → Black → Green   (fixed order, one pass each)
   Blue (round review)  — 2-3 lines: what's new, do we need another round?
                          every round ends with this, including the final one
+  Round separator      — one blank line + `---`
 Blue (synthesis)       — final conclusion + takeaways (after the last round)
 ```
 
@@ -103,6 +105,8 @@ Blue (synthesis)       — final conclusion + takeaways (after the last round)
 - Every hat contribution: short, labeled with hat emoji + name, and
   written strictly from that hat's lens. Don't pad with disclaimers from
   other hats.
+- Emoji prefix is mandatory in labels for all hats and Blue sections. Use
+  exact prefixes: `🔵 Blue`, `⚪ White`, `🔴 Red`, `🟡 Yellow`, `⚫ Black`, `🟢 Green`.
 - Preserve sequential dependency between hats: each hat should react to
   and build on what earlier hats in the round surfaced, not act like an
   isolated opinion written in parallel.
@@ -166,24 +170,42 @@ Then offer to continue:
 > requirement/constraint to inject (e.g. a fresh angle, a tightened
 > constraint, new information).
 
+Here `N` means the total rounds from the most recent completed run.
+Example: if the run just finished at 10 rounds, Continue Next options use 10.
+
 Use an adaptive continuation block so the user can respond quickly without
 rewriting instructions. Append this block after synthesis:
 
 ```text
 Continue Next
-- [ ] Run 1 more round
-- [ ] Run 2 more rounds
-- [ ] Run 3 more rounds
-- [ ] Use custom input (enter rounds and/or constraint in next message)
+- [ ] Run another N rounds
+- [ ] Use custom input text and run another N rounds
 ```
 
-If the user selects "Use custom input", ask for input in a follow-up message
-using this compact template:
+Optional Blue hints:
+
+- If Blue has strong, concrete follow-up suggestions, include:
+
+```text
+Blue Hint A: <new pressure angle>
+Blue Hint B: <new tightened requirement>
+
+Continue Next
+- [ ] Run another N rounds
+- [ ] Run another N rounds with Blue Hint A
+- [ ] Run another N rounds with Blue Hint B
+- [ ] Use custom input text and run another N rounds
+```
+
+- If Blue has no useful hints, omit Blue Hint A/B and omit the two hint-based
+  options entirely.
+
+If the user selects custom input, ask only for free text in a follow-up
+message; round count stays `N`:
 
 ```text
 Reply format (send in your next message):
-Rounds: <number>
-Constraint: <text or "none">
+Input text: <constraint/new info/focus>
 ```
 
 Rules:
@@ -191,18 +213,19 @@ Rules:
 - Treat checkboxes as quick-select hints, not inline input fields.
 - If the host supports structured options UI, mirror these options there,
   but still print a plain-text fallback block.
-- If the user provides only free text (no round count), ask one compact
-  follow-up for round count when required by mode routing.
+- Do not ask for round count in this flow; it is always `N`.
+- Continue Next is the only interactive checkbox section; all other sections
+  must be plain text or plain bullets.
 
 If the final output contains any `TBD (must be confirmed)` fields, append a
-short **Confirmation Checklist** with markdown checkboxes so the user can
-explicitly confirm outstanding items in-chat.
+short **Confirmation Items** section as a plain bullet list (non-interactive).
+Do not render it as markdown checkboxes.
 
 Minimum checklist items when applicable:
-- [ ] Owner confirmed
-- [ ] Deadline confirmed
-- [ ] Review trigger confirmed
-- [ ] Any remaining evidence-debt item accepted or resolved
+- Owner: TBD (must be confirmed)
+- Deadline: TBD (must be confirmed)
+- Review trigger: TBD (must be confirmed)
+- Evidence debt: accepted or resolved
 
 If the user asks for more rounds:
 - Resume numbering from where the previous run left off (don't restart at
@@ -221,8 +244,15 @@ If the user asks for more rounds:
 ## Style rules
 
 - Reply in the language the user used for the topic.
+- Keep one language across the whole artifact (headings + body + checklists).
+  Do not mix languages except in direct quotes from user input.
 - Keep each hat's turn tight (a few lines) — this is a discussion, not an
   essay per hat.
+- In orchestrated mode, enforce hard pacing:
+  White/Yellow/Black/Green max 2 concise bullets each,
+  Red max 1 sentence, Blue review max 2 lines.
+- Make round boundaries visually explicit:
+  each round starts with `### Round N — <Layer name>` and ends with `---`.
 - Never let Black turn into a general downer over the whole doc, and
   never let Yellow hand-wave away real risks — that's Black's job, stay
   in lane.

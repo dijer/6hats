@@ -20,12 +20,19 @@ Yes, run 1 more round. New constraint: assume we only have a $20k budget.
 - [ ] Part A runs exactly 1 round and ends with a Blue synthesis +
       continuation offer (per scenario 01's synthesis checks).
 - [ ] Part A continuation offer includes a compact **Continue Next** block
-      with quick options for 1/2/3 rounds and one separate
-      **Use custom input** checkbox.
+      with fixed-`N` base options: `Run another N rounds` and custom input
+      with the same `N`.
+- [ ] Hint-based options (`Run another N rounds with Blue Hint A/B`) appear
+      only if Blue provides useful hints; if not, hint lines and hint-based
+      options are omitted entirely, leaving only the base options.
+- [ ] `N` in Continue Next equals the total rounds from the most recent
+      completed run.
+- [ ] When Blue has strong follow-up suggestions, Part A continuation offer
+      includes two hint lines: `Blue Hint A` and `Blue Hint B`.
 - [ ] The continuation offer does not ask users to type text inside checkbox
       lines (no inline `<enter ...>` placeholders inside options).
 - [ ] If custom input is selected, the agent asks a follow-up with explicit
-      `Rounds: <number>` and `Constraint: <text or "none">` template.
+      `Input text: <constraint/new info/focus>` template and keeps rounds = `N`.
 - [ ] Part B's round is labeled **Round 2**, not Round 1 — numbering
       continues from the previous run.
 - [ ] Part B switches to orchestrated mode because the discussion now has more

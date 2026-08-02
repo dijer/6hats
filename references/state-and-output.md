@@ -114,15 +114,15 @@ Important claims still UNVERIFIED, or "None material".
 - Deadline (grounded in the record, otherwise `TBD (must be confirmed)`)
 - Review trigger
 
-## Confirmation Checklist
-If any field is `TBD (must be confirmed)`, include a compact checkbox list so
-the user can confirm missing items directly in-chat.
+## Confirmation Items
+If any field is `TBD (must be confirmed)`, include a compact plain bullet list
+of missing confirmations. Do not use markdown checkboxes in this section.
 
 Minimum items when applicable:
-- [ ] Owner confirmed
-- [ ] Deadline confirmed
-- [ ] Review trigger confirmed
-- [ ] Evidence debt accepted or resolved
+- Owner: TBD (must be confirmed)
+- Deadline: TBD (must be confirmed)
+- Review trigger: TBD (must be confirmed)
+- Evidence debt: accepted or resolved
 
 ## Decision Evolution
 Only layers that materially changed the decision, confidence, or scope.
@@ -130,21 +130,45 @@ Only layers that materially changed the decision, confidence, or scope.
 ## Continue Next
 Always append a compact continuation block after the Decision Brief:
 
-- [ ] Run 1 more round
-- [ ] Run 2 more rounds
-- [ ] Run 3 more rounds
-- [ ] Use custom input (enter rounds and/or constraint in next message)
+- [ ] Run another N rounds
+- [ ] Use custom input text and run another N rounds
 
-If the user selects "Use custom input", ask for input with this template:
+This is the only interactive checkbox block in the final response.
+
+`N` equals the total rounds from the most recent completed run.
+
+Blue hints are optional.
+
+- If Blue has strong, concrete follow-up suggestions, include:
+  - Blue Hint A: <new pressure angle>
+  - Blue Hint B: <new tightened requirement>
+  - plus two extra options in Continue Next:
+    - [ ] Run another N rounds with Blue Hint A
+    - [ ] Run another N rounds with Blue Hint B
+- If Blue has no useful hints, omit Blue Hint A/B and omit both hint-based
+  options.
+
+If the user selects custom input, ask for input with this template:
 
 - Reply format (send in your next message):
-- Rounds: <number>
-- Constraint: <text or "none">
+- Input text: <constraint/new info/focus>
 
 Treat checkboxes as quick-select hints, not inline text fields.
 
 When host capabilities include structured option widgets, render equivalent
 options there and keep this plain-text fallback in the response.
+
+## Presentation Invariants
+
+- Use one language across the final artifact; avoid mixed-language headings/body.
+- Keep emoji prefixes on all hat/Blue labels: `🔵/⚪/🔴/🟡/⚫/🟢`.
+- Round transcript must use explicit round headings and separators:
+  `### Round N — <Layer>` ... `---`.
+- Continue Next is the only interactive checkbox section.
+- Confirmation Items must remain a plain bullet list (non-interactive).
+
+For canonical structure, see:
+`references/golden-output-template.md`.
 ```
 
 The brief is a decision artifact, not a transcript. Preserve ambiguity honestly:

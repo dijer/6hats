@@ -53,5 +53,6 @@ or current pipeline costs.
       (the platform engineer or `TBD (must be confirmed)`), first reversible step, deadline,
       and review trigger.
 - [ ] If any final artifact field is `TBD (must be confirmed)`, the response
-      includes a compact **Confirmation Checklist** with markdown checkboxes.
+      includes a compact **Confirmation Items** plain list (non-interactive).
+- [ ] Interactive checkboxes appear only in **Continue Next**.
 - [ ] Confidence follows evidence quality, not the fact that four rounds ran.

@@ -92,6 +92,8 @@ See [SKILL.md](SKILL.md) for the full instructions the agent follows.
 [evals/](evals/) has repeatable pressure-scenario prompts + checklists for
 manually confirming the skill holds up (round order, hat separation,
 synthesis shape, continuation behavior). See [evals/README.md](evals/README.md).
+For scaling changes, use the [1/4/10 benchmark](evals/BENCHMARK.md) to record
+completion, available runtime cost, and protocol fidelity separately.
 
 ## Contribution flow
 

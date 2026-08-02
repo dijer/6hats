@@ -130,33 +130,37 @@ Only layers that materially changed the decision, confidence, or scope.
 ## Continue Next
 Always append a compact continuation block after the Decision Brief:
 
-- [ ] Run another N rounds
-- [ ] Use custom input text and run another N rounds
+1. Run another N rounds
+2. Run another N rounds: <discussion-derived focus 1>
+3. Run another N rounds: <discussion-derived focus 2>
+4. Custom focus
 
-This is the only interactive checkbox block in the final response.
+This is the only continuation-choice block in the final response.
 
 `N` equals the total rounds from the most recent completed run.
 
-Blue hints are optional.
+Options 2 and 3 are mandatory. Their actual focus text must be two distinct,
+concrete follow-ups derived from the current Decision Brief's main uncertainty,
+strongest dissent, evidence debt, reversal conditions, or unresolved action.
+Put each focus directly in its option label. Do not print separate hints or
+generic `Blue Hint A/B` labels.
 
-- If Blue has strong, concrete follow-up suggestions, include:
-  - Blue Hint A: <new pressure angle>
-  - Blue Hint B: <new tightened requirement>
-  - plus two extra options in Continue Next:
-    - [ ] Run another N rounds with Blue Hint A
-    - [ ] Run another N rounds with Blue Hint B
-- If Blue has no useful hints, omit Blue Hint A/B and omit both hint-based
-  options.
+If the user selects custom focus, ask for both values with this template:
 
-If the user selects custom input, ask for input with this template:
+```text
+Reply format (send in your next message):
+Focus: <constraint/new information/question>
+Rounds: <positive integer>
+```
 
-- Reply format (send in your next message):
-- Input text: <constraint/new info/focus>
+The custom value controls the number of additional rounds and follows the
+normal round-cap behavior. Options 1-3 keep `N` from the most recent run.
 
-Treat checkboxes as quick-select hints, not inline text fields.
-
-When host capabilities include structured option widgets, render equivalent
-options there and keep this plain-text fallback in the response.
+When the host provides a structured question or option tool, invoking it is
+mandatory. Render these same four choices as a single-select control and keep
+the numbered block as a keyboard-friendly fallback. In VS Code, use
+`vscode_askQuestions`. Never use Markdown checkboxes as input controls. When no
+structured tool exists, ask the user to reply with option number 1-4.
 
 ## Presentation Invariants
 
@@ -164,7 +168,7 @@ options there and keep this plain-text fallback in the response.
 - Keep emoji prefixes on all hat/Blue labels: `🔵/⚪/🔴/🟡/⚫/🟢`.
 - Round transcript must use explicit round headings and separators:
   `### Round N — <Layer>` ... `---`.
-- Continue Next is the only interactive checkbox section.
+- Continue Next is the only continuation-choice section.
 - Confirmation Items must remain a plain bullet list (non-interactive).
 
 For canonical structure, see:

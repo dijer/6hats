@@ -80,7 +80,7 @@ in 6 months. Treat unknown financial values as unknown; do not invent them.
       deadline is explicitly `TBD (must be confirmed)`, never invented.
 - [ ] If any final artifact field is `TBD (must be confirmed)`, the response
       includes a compact **Confirmation Items** plain list (non-interactive).
-- [ ] Interactive checkboxes appear only in **Continue Next**; confirmation
-      section does not use checkbox syntax.
+- [ ] **Continue Next** uses structured single-select controls when available
+      plus a numbered fallback; confirmation section does not use checkbox syntax.
 - [ ] The final artifact is compact and decision-oriented, not a replay of all
       agent and hat transcripts.

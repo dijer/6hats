@@ -20,19 +20,20 @@ Yes, run 1 more round. New constraint: assume we only have a $20k budget.
 - [ ] Part A runs exactly 1 round and ends with a Blue synthesis +
       continuation offer (per scenario 01's synthesis checks).
 - [ ] Part A continuation offer includes a compact **Continue Next** block
-      with fixed-`N` base options: `Run another N rounds` and custom input
-      with the same `N`.
-- [ ] Hint-based options (`Run another N rounds with Blue Hint A/B`) appear
-      only if Blue provides useful hints; if not, hint lines and hint-based
-      options are omitted entirely, leaving only the base options.
-- [ ] `N` in Continue Next equals the total rounds from the most recent
-      completed run.
-- [ ] When Blue has strong follow-up suggestions, Part A continuation offer
-      includes two hint lines: `Blue Hint A` and `Blue Hint B`.
-- [ ] The continuation offer does not ask users to type text inside checkbox
-      lines (no inline `<enter ...>` placeholders inside options).
-- [ ] If custom input is selected, the agent asks a follow-up with explicit
-      `Input text: <constraint/new info/focus>` template and keeps rounds = `N`.
+      with exactly four options: repeat `N`, two dynamic focused continuations,
+      and `Custom focus`.
+- [ ] Options 2 and 3 contain the actual text of two distinct follow-up focuses
+      derived from Part A's uncertainty, dissent, evidence debt, reversal
+      conditions, or unresolved takeaways; no generic `Blue Hint A/B` labels.
+- [ ] When a structured question tool is available, the agent invokes it with
+      the same four single-select choices; the user is not left with display-only
+      Markdown checkboxes.
+- [ ] `N` in options 1-3 equals the total rounds from the most recent completed
+      run.
+- [ ] The plain-text fallback uses numbered options and does not ask users to
+      type text inside option labels (no inline `<enter ...>` placeholders).
+- [ ] If `Custom focus` is selected, the agent asks for separate `Focus:` and
+      `Rounds:` fields and uses the supplied positive integer instead of `N`.
 - [ ] Part B's round is labeled **Round 2**, not Round 1 — numbering
       continues from the previous run.
 - [ ] Part B switches to orchestrated mode because the discussion now has more

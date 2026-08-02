@@ -54,5 +54,6 @@ or current pipeline costs.
       and review trigger.
 - [ ] If any final artifact field is `TBD (must be confirmed)`, the response
       includes a compact **Confirmation Items** plain list (non-interactive).
-- [ ] Interactive checkboxes appear only in **Continue Next**.
+- [ ] **Continue Next** uses structured single-select controls when available
+      plus a numbered fallback, never Markdown checkboxes as input controls.
 - [ ] Confidence follows evidence quality, not the fact that four rounds ran.

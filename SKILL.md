@@ -166,9 +166,9 @@ After the final round's Blue review, produce the **Blue Hat synthesis**:
 
 Then offer to continue:
 
-> Ask the user: run **N more rounds**? Optionally with a new
-> requirement/constraint to inject (e.g. a fresh angle, a tightened
-> constraint, new information).
+> Ask the user whether to run **N more rounds**, use one of two follow-up
+> focuses derived from this discussion, or provide a custom focus and round
+> count.
 
 Here `N` means the total rounds from the most recent completed run.
 Example: if the run just finished at 10 rounds, Continue Next options use 10.
@@ -178,43 +178,43 @@ rewriting instructions. Append this block after synthesis:
 
 ```text
 Continue Next
-- [ ] Run another N rounds
-- [ ] Use custom input text and run another N rounds
+1. Run another N rounds
+2. Run another N rounds: <discussion-derived focus 1>
+3. Run another N rounds: <discussion-derived focus 2>
+4. Custom focus
 ```
 
-Optional Blue hints:
+Options 2 and 3 are mandatory and dynamic. Derive two distinct, concrete
+focuses from the completed discussion's main uncertainty, strongest dissent,
+evidence debt, reversal conditions, or unresolved takeaways. Put the actual
+focus text directly in each option label; never print separate hints, use
+generic labels such as `Blue Hint A/B`, or invent a disconnected topic.
 
-- If Blue has strong, concrete follow-up suggestions, include:
+When the host provides a structured question or option tool, invoking it is
+mandatory. Present these same four single-select options through that tool so
+the user gets clickable controls. For example, in VS Code use
+`vscode_askQuestions`; do not substitute Markdown checkbox syntax for the tool
+call. Print the numbered block as a keyboard-friendly fallback as well.
 
-```text
-Blue Hint A: <new pressure angle>
-Blue Hint B: <new tightened requirement>
-
-Continue Next
-- [ ] Run another N rounds
-- [ ] Run another N rounds with Blue Hint A
-- [ ] Run another N rounds with Blue Hint B
-- [ ] Use custom input text and run another N rounds
-```
-
-- If Blue has no useful hints, omit Blue Hint A/B and omit the two hint-based
-  options entirely.
-
-If the user selects custom input, ask only for free text in a follow-up
-message; round count stays `N`:
+If the user selects custom focus, ask for both fields in a follow-up message:
 
 ```text
 Reply format (send in your next message):
-Input text: <constraint/new info/focus>
+Focus: <constraint/new information/question>
+Rounds: <positive integer>
 ```
+
+The custom value becomes the number of additional rounds. Apply the normal
+round cap and above-cap behavior to it; do not silently reuse `N`.
 
 Rules:
 - Keep the block compact (5 lines max after the heading).
-- Treat checkboxes as quick-select hints, not inline input fields.
-- If the host supports structured options UI, mirror these options there,
-  but still print a plain-text fallback block.
-- Do not ask for round count in this flow; it is always `N`.
-- Continue Next is the only interactive checkbox section; all other sections
+- Never use Markdown checkboxes for continuation choices; they are display
+  syntax, not reliable input controls.
+- If no structured question tool exists, ask the user to reply with option
+  number 1-4 from the plain-text fallback block.
+- Options 1-3 use `N`; custom focus lets the user choose a different count.
+- Continue Next is the only continuation-choice section; all other sections
   must be plain text or plain bullets.
 
 If the final output contains any `TBD (must be confirmed)` fields, append a
@@ -299,8 +299,11 @@ up at this app's scale once the team is fluent.
 - Re-evaluate a full migration only after that pilot ships.
 - If bundle size is the itch, try trimming React boilerplate first.
 
-Want to run another round — maybe with a constraint like "assume the
-pilot already shipped successfully"?
+Continue Next
+1. Run another 1 round
+2. Run another 1 round: assume the Svelte pilot shipped successfully
+3. Run another 1 round: focus on measured bundle and runtime gains
+4. Custom focus
 ```
 
 ## Common Mistakes

@@ -31,6 +31,7 @@
 ## Validation Run
 
 - [ ] Ran at least one relevant eval scenario manually
+- [ ] Recorded the 1/4/10 benchmark when orchestration or output contracts changed
 - [ ] Ran local docs/link check script: node ./scripts/check-docs.mjs
 
 ## Notes

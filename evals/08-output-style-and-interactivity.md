@@ -18,11 +18,14 @@ Constraint: keep recommendation reversible in first step.
       bullets each, Red is 1 sentence, Blue review is max 2 lines.
 - [ ] If action fields contain `TBD (must be confirmed)`, **Confirmation Items**
       appears as plain bullets (non-interactive).
-- [ ] Interactive checkboxes appear only in **Continue Next**.
-- [ ] Continue Next uses fixed-`N` options from the most recent completed run,
-      plus custom input with the same `N`.
-- [ ] If Blue has strong suggestions, Continue Next includes `Blue Hint A/B`
-      lines and hint-based options. If not, both hint lines and hint-based
-      options are omitted.
-- [ ] If custom input is selected, the next turn asks for:
-      `Input text: <constraint/new info/focus>`.
+- [ ] **Continue Next** invokes the host's structured single-select tool when
+      available and also prints a numbered plain-text fallback.
+- [ ] Markdown checkboxes are not presented as input controls.
+- [ ] Continue Next has exactly four options: repeat `N`, two focused `N`-round
+      continuations, and `Custom focus`.
+- [ ] Options 2 and 3 embed two distinct, concrete focuses derived from the
+      completed discussion directly in their labels; separate hints and generic
+      `Blue Hint A/B` labels are absent.
+- [ ] If custom focus is selected, the next turn asks for separate
+      `Focus: <...>` and `Rounds: <positive integer>` fields; the user may
+      change the number of additional rounds.

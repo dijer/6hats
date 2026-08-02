@@ -6,7 +6,9 @@ Use this as canonical output shape for orchestrated runs.
 
 - Keep one language across headings, body, and lists.
 - Keep emoji prefixes on hat labels.
-- Continue Next is the only interactive checkbox block.
+- Continue Next is the only continuation-choice block.
+- Use the host's structured single-select tool when available; never use
+	Markdown checkboxes as input controls.
 
 ## Round transcript skeleton
 
@@ -14,7 +16,6 @@ Use this as canonical output shape for orchestrated runs.
 🔵 Blue (frame): <topic/scope/done>
 
 ### Round 1 — Baseline
-🔵 Blue (round frame): <pressure focus>
 ⚪ White: <max 2 bullets in orchestrated>
 🔴 Red: <max 1 sentence>
 🟡 Yellow: <max 2 bullets>
@@ -72,29 +73,23 @@ Use this as canonical output shape for orchestrated runs.
 - <only materially changing layers>
 
 ## Continue Next
-- [ ] Run another N rounds
-- [ ] Use custom input text and run another N rounds
+1. Run another N rounds
+2. Run another N rounds: <focus derived from the main uncertainty or evidence debt>
+3. Run another N rounds: <focus derived from the strongest dissent or reversal conditions>
+4. Custom focus
 ```
 
-Optional hint variant:
+Options 2 and 3 must contain two distinct, concrete focuses derived from the
+completed discussion. Put each focus directly in its option label; do not print
+separate hints or generic `Blue Hint A/B` labels.
 
-```text
-Blue Hint A: <new pressure angle>
-Blue Hint B: <new tightened requirement>
-
-- [ ] Run another N rounds
-- [ ] Run another N rounds with Blue Hint A
-- [ ] Run another N rounds with Blue Hint B
-- [ ] Use custom input text and run another N rounds
-```
-
-If no useful hints, omit Blue Hint A/B and omit hint-based options.
-
-If user selects custom input, ask follow-up:
+If the user selects custom focus, ask:
 
 ```text
 Reply format (send in your next message):
-Input text: <constraint/new info/focus>
+Focus: <constraint/new information/question>
+Rounds: <positive integer>
 ```
 
-`N` equals total rounds from most recent completed run.
+`N` equals total rounds from the most recent completed run for options 1-3.
+Custom focus uses the new round count supplied by the user.

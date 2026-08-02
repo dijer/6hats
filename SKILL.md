@@ -67,6 +67,9 @@ Blue (synthesis)       — final conclusion + takeaways (after the last round)
 - Every hat contribution: short, labeled with hat emoji + name, and
   written strictly from that hat's lens. Don't pad with disclaimers from
   other hats.
+- Preserve sequential dependency between hats: each hat should react to
+  and build on what earlier hats in the round surfaced, not act like an
+  isolated opinion written in parallel.
 - Red is the shortest, most instinctive turn — a raw gut reaction with
   zero reasoning (de Bono caps it at ~30 seconds). One or two lines, no
   justification, no analysis.

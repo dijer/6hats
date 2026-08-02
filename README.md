@@ -34,6 +34,10 @@ The agent will:
    checklist.
 4. Offer to run more rounds, optionally with a new requirement/constraint.
 
+This skill preserves the **sequential dependency between hats**: each hat
+builds on what the earlier hats surfaced, instead of acting as an isolated
+opinion.
+
 Typical follow-up prompt:
 
 > Run 1 more round. New constraint: assume the first option failed.

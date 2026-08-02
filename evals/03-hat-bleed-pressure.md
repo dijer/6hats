@@ -28,5 +28,6 @@ asks while still being helpful.
       briefly notes that recommendation/alternatives belong to
       Blue-synthesis/Green respectively.
 - [ ] The final Blue synthesis (not the frame) is where the actual
-      recommendation appears, backed by the discussion.
+      recommendation appears, backed by the discussion, and it includes
+      confidence + main uncertainty.
 - [ ] Round order and synthesis shape still match scenario 01's checks.

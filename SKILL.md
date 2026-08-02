@@ -22,11 +22,15 @@ tempting to add a caveat that belongs to another hat. Core principle:
 
 - User explicitly invokes "6 hats" / "six thinking hats" / "шесть шляп".
 - User wants a decision or idea stress-tested from multiple angles instead
-  of a single blended opinion.
+  of a single blended opinion — ideally signalled explicitly (names the
+  method, or asks to break it down by pros/cons/risks/alternatives).
 - User asks for structured pros/cons/risk/creativity review of a plan.
 
-Not for: quick factual questions, or when the user just wants a direct
-recommendation without process.
+Not for: quick factual questions; a topic so narrow or purely factual that
+six lenses are overkill (e.g. "int vs float here", "which HTTP status
+code"); or when the user just wants a direct recommendation without
+process. If in doubt on a borderline ask, offer the format instead of
+forcing it.
 
 ## Hats (fixed roles)
 
@@ -40,6 +44,12 @@ recommendation without process.
 | 🟢 Green | Creativity / alternatives | What else is possible? Other options? |
 
 Blue never argues a side — it frames, moderates, and synthesizes only.
+If a statement belongs to another hat, leave it for that hat's turn.
+
+The set is exactly these six and the order below is fixed. Don't add a
+"7th hat", drop a hat, or reorder unless the user explicitly asks. If a
+user wants a new angle, fold it in as a **constraint** (see Setup), not a
+new hat. There is no seventh hat in de Bono's method.
 
 ## Round structure
 
@@ -48,6 +58,7 @@ Blue (frame)          — state the topic, scope, and what "done" looks like
 Round 1..N:
   White → Red → Yellow → Black → Green   (fixed order, one pass each)
   Blue (round review)  — 2-3 lines: what's new, do we need another round?
+                         every round ends with this, including the final one
 Blue (synthesis)       — final conclusion + takeaways (after the last round)
 ```
 
@@ -56,9 +67,31 @@ Blue (synthesis)       — final conclusion + takeaways (after the last round)
 - Every hat contribution: short, labeled with hat emoji + name, and
   written strictly from that hat's lens. Don't pad with disclaimers from
   other hats.
+- Red is the shortest, most instinctive turn — a raw gut reaction with
+  zero reasoning (de Bono caps it at ~30 seconds). One or two lines, no
+  justification, no analysis.
 - Carry context forward: each hat should build on what prior hats in the
   *same* round said, and Blue's round reviews should reference prior
   rounds — don't just repeat the previous round.
+- Target length: each hat gets 2-5 concise bullets or 2-4 short sentences;
+  Blue reviews stay to 3 lines max.
+- Blue should detect contradictions between hats, decide whether another
+  round is worthwhile, and avoid introducing new arguments.
+- Green should prioritize realistically executable alternatives, not
+  pure fantasy.
+
+### Fidelity to de Bono (invariants — never break these)
+
+- A sequence always **opens and closes with Blue**.
+- Only **one hat is "worn" at a time** — parallel thinking, never a blended
+  opinion.
+- **Yellow comes before Black** (weigh benefits before cautions).
+- **Red stays brief and instinctive**, never rationalized.
+
+de Bono's original lets Blue tailor the hat sequence per task; this skill
+fixes `White→Red→Yellow→Black→Green` as a sensible, invariant-respecting
+default (facts → gut → upside → risk → alternatives) so runs stay
+consistent and testable.
 
 ## Setup (before Blue frame)
 
@@ -75,7 +108,10 @@ missing:
 After the final round's Blue review, produce the **Blue Hat synthesis**:
 
 1. **Conclusion** — 2-4 sentences, the actual answer/decision.
-2. **Takeaways** — a short bullet checklist of concrete, actionable next
+2. **Confidence** — Low / Medium / High, based on how much evidence and
+  agreement the discussion produced.
+3. **Main uncertainty** — the single biggest open question or risk.
+4. **Takeaways** — a short bullet checklist of concrete, actionable next
    steps derived from the discussion (this is the "hints" the user gets
    to walk away with — not a recap of what each hat said).
 
@@ -90,6 +126,8 @@ If the user asks for more rounds:
   Round 1).
 - If a new requirement was given, apply it to every hat from that round
   onward, and have Blue mention it in the round frame.
+- The final round still gets its Blue review before the synthesis; do not
+  skip it just because there are no more rounds.
 - Produce a new Blue synthesis at the end that supersedes (not just
   appends to) the previous one, since it now has more information.
 
@@ -132,6 +170,10 @@ with existing tooling instead of switching frameworks.
 🔵 Blue (synthesis):
 **Conclusion:** Don't do a full migration now — the team has zero Svelte
 experience and a live roadmap; the risk outweighs the bundle-size win.
+**Confidence:** Medium — clear agreement on the risk, but no hands-on
+Svelte data to size the real payoff.
+**Main uncertainty:** Whether Svelte's DX/perf gains would actually hold
+up at this app's scale once the team is fluent.
 **Takeaways:**
 - Pilot Svelte on one new internal tool to build real experience.
 - Re-evaluate a full migration only after that pilot ships.
@@ -151,4 +193,6 @@ pilot already shipped successfully"?
 | Extra rounds restart at "Round 1" | Continue numbering from the last round used. |
 | A new requirement is mentioned but only Blue references it | Apply the constraint to every hat's contribution from that round on. |
 | Hats write long essays | Keep each turn to a few lines — it's a discussion, not a report. |
+| User asks for a "7th hat" or a different hat order | There are only six hats and the order is fixed; fold new angles in as a constraint instead. |
+| Red hat over-explains its feeling | Red is a raw gut reaction, no reasoning — keep it the shortest turn. |
 

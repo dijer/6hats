@@ -19,7 +19,8 @@ Run 6 hats on: should our team adopt a 4-day work week?
       alternatives, Green raises no risk judgments).
 - [ ] Only one round runs (no round count was requested, default = 1).
 - [ ] Blue produces a final synthesis with two distinct parts: a
-      conclusion (2-4 sentences) and a bullet takeaway checklist of
-      concrete next steps — not a recap of what each hat said.
+      conclusion (2-4 sentences), a confidence level, a main uncertainty,
+      and a bullet takeaway checklist of concrete next steps — not a
+      recap of what each hat said.
 - [ ] After the synthesis, the agent offers to run more rounds and
       mentions the option to add a new requirement/constraint.

@@ -24,6 +24,9 @@ Yes, run 1 more round. New constraint: assume we only have a $20k budget.
 - [ ] The $20k budget constraint is reflected in *every* hat's
       contribution in round 2 (not just mentioned once by Blue).
 - [ ] Blue's round-2 frame/review explicitly names the new constraint.
-- [ ] The round-2 synthesis supersedes the round-1 conclusion (updates
-      the takeaways in light of the budget constraint) rather than just
-      appending a second, disconnected conclusion.
+- [ ] Round 2 still ends with a Blue review before the final synthesis;
+      Blue review is not skipped just because round 2 is the last round.
+- [ ] The round-2 synthesis supersedes the round-1 conclusion, includes
+      confidence + main uncertainty, and updates the takeaways in light
+      of the budget constraint rather than just appending a second,
+      disconnected conclusion.

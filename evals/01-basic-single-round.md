@@ -21,9 +21,11 @@ Run 6 hats on: should our team adopt a 4-day work week?
 - [ ] Only one round runs (no round count was requested, default = 1).
 - [ ] The request stays in Standard mode: no orchestrated-mode announcement,
       supporting subagents, pressure layers, or checkpoint ledger appears.
-- [ ] Blue produces a final synthesis with two distinct parts: a
-      conclusion (2-4 sentences), a confidence level, a main uncertainty,
-      and a bullet takeaway checklist of concrete next steps — not a
-      recap of what each hat said.
+- [ ] Blue produces a final synthesis with a conclusion at the depth needed to
+      state its scope and conditions, a confidence level, a main uncertainty,
+      and a takeaway checklist of concrete next steps — not a recap of what
+      each hat said.
+- [ ] The synthesis ends with concrete applicable, boundary, and non-applicable
+      cases grounded in actors, conditions, action, and expected outcome.
 - [ ] After the synthesis, the agent offers to run more rounds and
       mentions the option to add a new requirement/constraint.

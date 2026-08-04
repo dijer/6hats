@@ -119,8 +119,10 @@ Blue (synthesis)       — final conclusion + takeaways (after the last round)
 - Carry context forward: each hat should build on what prior hats in the
   *same* round said, and Blue's round reviews should reference prior
   rounds — don't just repeat the previous round.
-- Target length: each hat gets 2-5 concise bullets or 2-4 short sentences;
-  Blue reviews stay to 3 lines max.
+- Let each hat choose the depth needed for its lens. A turn must be long enough
+  to add material reasoning, evidence, or implications, but must not repeat
+  points merely to reach a target length. Do not impose numeric bullet,
+  sentence, or line caps. Red remains intentionally brief and instinctive.
 - Blue should detect contradictions between hats, decide whether another
   round is worthwhile, and avoid introducing new arguments.
 - In orchestrated rounds 2..N, Blue gives a one-line process frame before
@@ -156,13 +158,18 @@ missing:
 
 After the final round's Blue review, produce the **Blue Hat synthesis**:
 
-1. **Conclusion** — 2-4 sentences, the actual answer/decision.
+1. **Conclusion** — the actual answer/decision, at the depth needed to state
+  its scope and conditions clearly.
 2. **Confidence** — Low / Medium / High, based on how much evidence and
   agreement the discussion produced.
 3. **Main uncertainty** — the single biggest open question or risk.
 4. **Takeaways** — a short bullet checklist of concrete, actionable next
    steps derived from the discussion (this is the "hints" the user gets
    to walk away with — not a recap of what each hat said).
+5. **Concrete cases** — specific scenarios showing where the conclusion
+  applies, one meaningful boundary case, and where it should not be used.
+  Ground each case in actors, conditions, and an expected outcome; do not
+  substitute generic examples.
 
 Then offer to continue:
 
@@ -246,11 +253,11 @@ If the user asks for more rounds:
 - Reply in the language the user used for the topic.
 - Keep one language across the whole artifact (headings + body + checklists).
   Do not mix languages except in direct quotes from user input.
-- Keep each hat's turn tight (a few lines) — this is a discussion, not an
-  essay per hat.
-- In orchestrated mode, enforce hard pacing:
-  White/Yellow/Black/Green max 2 concise bullets each,
-  Red max 1 sentence, Blue review max 2 lines.
+- Let relevance determine each hat's length. Models may use different depths
+  when the lens has more or less material to contribute; no hat should pad,
+  recap, or restate another lens.
+- Keep Red the shortest, instinctive turn and keep Blue reviews focused on
+  process and changed conclusions, without numeric length caps.
 - Make round boundaries visually explicit:
   each round starts with `### Round N — <Layer name>` and ends with `---`.
 - Never let Black turn into a general downer over the whole doc, and
@@ -315,7 +322,7 @@ Continue Next
 | Synthesis just recaps what each hat said | Synthesis must be a conclusion + actionable takeaways, not a summary. |
 | Extra rounds restart at "Round 1" | Continue numbering from the last round used. |
 | A new requirement is mentioned but only Blue references it | Apply the constraint to every hat's contribution from that round on. |
-| Hats write long essays | Keep each turn to a few lines — it's a discussion, not a report. |
+| Hats pad or repeat points | Let each lens use the depth its material requires, then stop. |
 | User asks for a "7th hat" or a different hat order | There are only six hats and the order is fixed; fold new angles in as a constraint instead. |
 | Red hat over-explains its feeling | Red is a raw gut reaction, no reasoning — keep it the shortest turn. |
 

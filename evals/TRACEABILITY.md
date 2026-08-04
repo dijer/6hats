@@ -15,8 +15,9 @@ This table maps protocol requirements to eval scenarios and expected checks.
 | Requests above 10 are capped correctly | SKILL.md, references/orchestrated-rounds.md | 07 | At most 10 rounds; continuation only with fresh evidence/constraint |
 | Adaptive continuation UX: clickable structured choice, two discussion-derived focus options, plus custom focus/count | SKILL.md, references/state-and-output.md | 02, 08 | Host question tool is used when available; options 2-3 embed distinct focuses from the result; custom flow asks for focus and round count |
 | Final response has one continuation fallback block | references/state-and-output.md | 04, 06 | Fallback uses numbered plain text, not Markdown checkboxes; confirmation section is a plain list |
-| Golden output shape is stable and reusable | references/golden-output-template.md | 08 | Response follows canonical skeleton for rounds and final artifact |
-| Output style contract (emoji, round headings/separators, single language, pacing caps) | SKILL.md, references/state-and-output.md | 08 | Visual and pacing invariants are respected end-to-end |
+| Hat depth is chosen adaptively | SKILL.md | 08 | Each hat says enough to materially advance its lens; no numeric bullet or sentence cap is imposed except Red remaining brief |
+| Final brief grounds the recommendation in concrete cases | references/state-and-output.md | 08 | Cases cover where the decision applies, a boundary case, and where it should not be used |
+| Output style contract (emoji, round headings/separators, single language) | SKILL.md, references/state-and-output.md | 08 | Visual and language invariants are respected end-to-end |
 | Supporting roles are not assigned hat turns | references/orchestrated-rounds.md, references/agent-contracts.md | 04, 06, 07 | Researcher/Challenger/Verifier are support only |
 | Constraint and evidence status discipline | references/state-and-output.md | 04, 05, 06, 07 | UNVERIFIED/SCENARIO used correctly; contradictions preserved |
 | Final selected round receives post Verifier | references/orchestrated-rounds.md | 04, 05, 06, 07 | Verifier after final selected layer |

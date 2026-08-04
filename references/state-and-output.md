@@ -76,8 +76,8 @@ Next pressure: ...
 ```
 
 Keep it compact. Do not reproduce every hat or agent finding after the Six Hats
-round has already shown them. In orchestrated mode, the checkpoint is at most seven
-short lines including its header. The single final synthesis appears only after
+round has already shown them. Include only fields that help route the next layer;
+do not enforce a numeric line cap. The single final synthesis appears only after
 the final selected round's verification.
 
 ## Final Decision Brief
@@ -94,7 +94,7 @@ Clear recommendation, scope, and what is explicitly not being decided.
 Low | Medium | High, with evidence-based rationale.
 
 ## Why It Survived Pressure
-2-4 decisive reasons.
+The decisive reasons needed to explain why the recommendation held.
 
 ## Strongest Dissent
 The best unresolved argument against the recommendation.
@@ -126,6 +126,18 @@ Minimum items when applicable:
 
 ## Decision Evolution
 Only layers that materially changed the decision, confidence, or scope.
+
+## Concrete Cases
+Give specific cases that make the recommendation operational rather than
+abstract:
+- one case where the recommendation applies;
+- one meaningful boundary case requiring judgment or a condition;
+- one case where the recommendation should not be used.
+
+Each case names relevant actors, starting conditions, the action implied by the
+decision, and the expected outcome. Use details from the discussion when
+available; label invented details as `SCENARIO` rather than presenting them as
+facts.
 
 ## Continue Next
 Always append a compact continuation block after the Decision Brief:
@@ -170,9 +182,6 @@ structured tool exists, ask the user to reply with option number 1-4.
   `### Round N — <Layer>` ... `---`.
 - Continue Next is the only continuation-choice section.
 - Confirmation Items must remain a plain bullet list (non-interactive).
-
-For canonical structure, see:
-`references/golden-output-template.md`.
 ```
 
 The brief is a decision artifact, not a transcript. Preserve ambiguity honestly:
@@ -191,6 +200,8 @@ name the exact evidence or constraint pass required to complete it.
 - Action plan begins with the smallest responsible reversible step.
 - Evidence debt is visible even when the recommendation is strong.
 - Decision evolution excludes layers that added no material pressure.
+- Concrete cases include an applicable case, a boundary case, and a
+  non-applicable case with actors, conditions, action, and expected outcome.
 
 ## Filled Example (compact)
 
@@ -250,4 +261,15 @@ Rewrite cost and duration — still UNVERIFIED (SCENARIO only).
 ## Decision Evolution
 - Budget pressure: shifted default from "rewrite" to "defer".
 - Failure escalation: confirmed rewrite endangers the expansion timeline.
+
+## Concrete Cases
+- Applies: The 3-person backend team has 9 months of runway and a 6-month
+  expansion date. It ships the multi-currency layer behind a flag; expected
+  outcome is expansion without committing runway to an open-ended rewrite.
+- Boundary (`SCENARIO`): The spike finds the layer can ship in 6 months only by
+  exceeding the agreed defect budget. The backend lead pauses rollout and
+  compares a scoped rewrite; expected outcome is a new evidence-based decision.
+- Does not apply (`SCENARIO`): A funded platform team has validated rewrite
+  cost, spare capacity, and no fixed expansion deadline. It may proceed with the
+  rewrite; expected outcome is replacement without blocking current revenue.
 ```

@@ -193,9 +193,9 @@ Commitment is an output step, not an extra round.
 
 - Spawn only roles named for the layer.
 - Cap each role at five findings.
-- In orchestrated mode, cap White/Yellow/Black/Green at two concise bullets each,
-   Red at one sentence, and Blue review at two lines. This pacing overrides the
-   Standard target length but not any hat's role.
+- Let each hat choose the depth needed to materially test its lens. Control cost
+   by removing repetition, recaps, and non-material detail rather than imposing
+   bullet, sentence, or line caps. Red remains brief and non-rationalized.
 - Pass the ledger, not raw history, between rounds.
 - Every layer applies its named pressure dimension. If agents find no new
    evidence, record `NO NEW EVIDENCE` and test the decision against that

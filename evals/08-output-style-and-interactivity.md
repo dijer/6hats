@@ -14,8 +14,14 @@ Constraint: keep recommendation reversible in first step.
 - [ ] Round transcript is visually segmented with explicit headings
       (`### Round N — <Layer>`) and separators between rounds.
 - [ ] The response uses one language consistently across headings/body/lists.
-- [ ] In orchestrated pacing, White/Yellow/Black/Green stay within 2 concise
-      bullets each, Red is 1 sentence, Blue review is max 2 lines.
+- [ ] Hat turns have no numeric bullet, sentence, or line caps. Each turn uses
+      enough depth to materially advance its lens without padding or repetition;
+      Red remains the shortest and non-rationalized.
+- [ ] **Concrete Cases** includes one applicable case, one meaningful boundary
+      case, and one non-applicable case. Every case names actors, starting
+      conditions, implied action, and expected outcome.
+- [ ] Invented case details are labeled `SCENARIO`; discussion-grounded details
+      retain their evidence status.
 - [ ] If action fields contain `TBD (must be confirmed)`, **Confirmation Items**
       appears as plain bullets (non-interactive).
 - [ ] **Continue Next** invokes the host's structured single-select tool when

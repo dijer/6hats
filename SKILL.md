@@ -51,6 +51,11 @@ but omits the count, ask once for an integer from 2 to 10.
 The main agent acts as the **Orchestrator** and owns the frame, ledger, routing,
 checkpoints, and final synthesis.
 
+Execution starts with the complete `Round 1 — Baseline` Six Hats sequence.
+Do not dispatch supporting agents, research later pressure layers, or advance the
+ledger before Baseline ends with Blue review. A pressure plan is preparation,
+not a substitute for the Baseline round.
+
 For requests above 10, run at most 10 in the current batch, then offer to
 continue only with fresh evidence or a new constraint. Never create duplicate
 rounds merely to hit a large number.

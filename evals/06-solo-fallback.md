@@ -18,6 +18,8 @@ or current pipeline costs.
 
 - [ ] The agent announces **solo fallback** in one line because no subagent tool
       is available; it does not silently behave as if subagents ran.
+- [ ] This scenario removes all generic and named subagent/spawn tools. Missing
+      registered role names alone is not accepted as evidence for solo fallback.
 - [ ] The agent never claims a Researcher/Challenger/Verifier "subagent" was
       dispatched. Findings from those roles are clearly produced by the main
       agent itself and labeled by role.
@@ -38,6 +40,8 @@ or current pipeline costs.
 
 ### Rounds and state
 
+- [ ] The complete Baseline hat sequence runs immediately after setup, before
+      any self-run supporting role pass or Evidence gaps work.
 - [ ] Exactly four sequential rounds run: `Baseline` plus three distinct pressure
       layers in catalog order, numbered 1-4 with turn barriers.
 - [ ] White → Red → Yellow → Black → Green run sequentially each round, ending

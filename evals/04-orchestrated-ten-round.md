@@ -17,8 +17,17 @@ in 6 months. Treat unknown financial values as unknown; do not invent them.
 
 - [ ] The agent explicitly announces orchestrated mode
       (real subagents available) or an honest solo fallback.
+- [ ] A generic subagent/spawn tool counts as real subagent capability. The
+      agent does not switch to solo fallback merely because `Researcher`,
+      `Challenger`, or `Verifier` is not a registered named agent.
+- [ ] Supporting roles are passed inside generic prompts. `agentName` or an
+      equivalent selector is used only when the host explicitly advertises the
+      exact named agent.
 - [ ] Supporting roles are Researcher, Challenger, and/or Verifier; no subagent
       is assigned White/Red/Yellow/Black/Green as an independent parallel task.
+- [ ] Every supporting prompt declares itself a bounded task in the active
+      6hats workflow and forbids recursive Six Hats execution and unrelated
+      workflow skills.
 - [ ] Only roles named for each pressure layer are dispatched; the agent does
       not spawn every role for every round.
 - [ ] Supporting findings are converted into one pressure packet before each
@@ -26,6 +35,9 @@ in 6 months. Treat unknown financial values as unknown; do not invent them.
 
 ### Ten-layer progression
 
+- [ ] The first reasoning artifact after setup is the complete `Baseline` hat
+      sequence and Blue review. No subagent, web research, provisional winner,
+      or Evidence gaps work appears before it.
 - [ ] Exactly ten pressure layers run in order: `Baseline`, `Evidence gaps`,
       `Budget pressure`, `Time and capacity`, `Stakeholder conflict`,
       `Failure escalation`, `Alternative paths`, `Reversal test`,
@@ -34,6 +46,8 @@ in 6 months. Treat unknown financial values as unknown; do not invent them.
       White → Red → Yellow → Black → Green, followed by Blue review. Only layer
       10 adds the single final synthesis after its Verifier pass; no continuation
       prompt interrupts layers 1-9.
+- [ ] Supporting findings are never called a round and never replace the
+      user-visible hat sequence for their pressure layer.
 - [ ] Every hat and Blue section is labeled with required emoji prefixes:
       `🔵 Blue`, `⚪ White`, `🔴 Red`, `🟡 Yellow`, `⚫ Black`, `🟢 Green`.
 - [ ] Rounds are visually separated with explicit round headings

@@ -77,11 +77,16 @@ When orchestration begins only after a completed Standard round:
 
 Announce the selected mode in one line:
 
-1. **Orchestrated mode**: a subagent tool is available. Dispatch only roles
-   listed for the current pressure layer, in parallel when independent.
-2. **Solo fallback**: no subagent tool is available. The Orchestrator performs
-   the same bounded contracts itself and labels the findings. Do not pretend
-   subagents ran.
+1. **Orchestrated mode**: any tool can spawn an isolated agent from an arbitrary
+   prompt. A generic spawn tool is sufficient; Researcher, Challenger, and
+   Verifier are prompt roles, not names that must be registered by the host.
+   Omit `agentName` or equivalent unless the host explicitly advertises that
+   exact agent. If a named dispatch fails but generic spawning remains
+   available, retry generically and remain in orchestrated mode.
+2. **Solo fallback**: no generic or named subagent/spawn tool is available. The
+   Orchestrator performs the same bounded contracts itself and labels the
+   findings. Do not pretend subagents ran. Missing named agents alone never
+   justifies solo fallback.
 
 Capability changes execution, not the required output.
 
@@ -91,6 +96,19 @@ Always run `1. Baseline` first. Select exactly `N-1` additional layers from
 `2-10` based on decision impact, unresolved evidence, user constraints, and
 non-overlap with already selected pressure. Preserve the catalog order among
 selected layers. For 10 rounds, run the full catalog.
+
+### Baseline Phase Barrier
+
+After setup and the provisional pressure plan, the next reasoning artifact must
+be the complete user-visible `Round 1 — Baseline`: Blue frame, White, Red,
+Yellow, Black, Green, and Blue review. Baseline has no supporting roles, so do
+not dispatch subagents, browse for later layers, invent a provisional winner,
+or describe supporting findings as a "round" before it completes. Only after
+the Baseline review and checkpoint may the Orchestrator begin Evidence gaps.
+
+For every later layer, supporting findings are inputs to that layer's Six Hats
+round, never the round itself. Do not advance to another pressure layer until
+the current layer has exposed all hat turns and its Blue review.
 
 Before starting, record provisional signatures for planned layers:
 `objective + active constraints + question to answer`. Immediately before each
@@ -139,7 +157,8 @@ For each selected layer:
 2. **Dispatch pre-round roles.** Follow
    [agent contracts](./agent-contracts.md). Run only Researcher/Challenger roles
    marked `Pre`. Pass the decision frame, current ledger, layer objective, and
-   relevant source context.
+   relevant source context. Treat role names as prompt content, not registered
+   agent names, unless the host explicitly provides matching named agents.
 3. **Build the pressure packet.** Deduplicate agent findings into:
    - verified facts;
    - assumptions and `SCENARIO`s;

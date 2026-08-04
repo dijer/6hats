@@ -16,6 +16,20 @@ Pressure layer and objective:
 Relevant source context:
 ```
 
+Prefix every dispatch with this isolation contract:
+
+```text
+This is a bounded supporting task inside an already active 6hats workflow.
+The prompt contains the complete role contract. Do not start or run a Six Hats
+discussion, and do not discover, invoke, or follow unrelated workflow skills.
+Return only the requested YAML to the Orchestrator.
+```
+
+Researcher, Challenger, and Verifier are roles carried inside the prompt. Do not
+pass them as `agentName` or an equivalent named-agent selector unless the host
+explicitly lists that exact registered agent. Generic isolated agents are the
+default execution mechanism.
+
 A post-round Verifier receives the decision frame, layer objective, exact
 pressure packet, completed hat turns, Blue review, and provisional ledger. On
 the final selected round it also receives the compact decision candidate defined

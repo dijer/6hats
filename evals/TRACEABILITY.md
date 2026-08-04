@@ -11,6 +11,9 @@ This table maps protocol requirements to eval scenarios and expected checks.
 | Rounds are visually segmented for readability | SKILL.md | 04, 05, 06, 07 | Round headings and separators are present |
 | Red stays brief and non-rationalized | SKILL.md | 01, 03 | Red is shortest and not analytical |
 | Orchestrated mode for 2-10 rounds | SKILL.md, references/orchestrated-rounds.md | 04, 05 | Correct mode routing and exact count behavior |
+| Baseline is the first executed round | references/orchestrated-rounds.md | 04, 06 | Full Baseline hat sequence appears before any supporting-agent dispatch or later pressure layer |
+| Generic subagent tools enable orchestration | references/orchestrated-rounds.md | 04, 06 | Roles are carried in prompts; missing named agents never trigger solo fallback when generic spawn is available |
+| Supporting prompts stay inside their assigned contract | references/agent-contracts.md | 04, 06 | Dispatch says the task is self-contained and forbids unrelated workflow skills or recursive Six Hats execution |
 | Exact requested round count is honored | references/orchestrated-rounds.md | 05 | No preset rounding; no extra rounds |
 | Requests above 10 are capped correctly | SKILL.md, references/orchestrated-rounds.md | 07 | At most 10 rounds; continuation only with fresh evidence/constraint |
 | Adaptive continuation UX: clickable structured choice, two discussion-derived focus options, plus custom focus/count | SKILL.md, references/state-and-output.md | 02, 08 | Host question tool is used when available; options 2-3 embed distinct focuses from the result; custom flow asks for focus and round count |

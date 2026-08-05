@@ -12,6 +12,31 @@ An agent skill that facilitates structured discussions using Edward de Bono's
 npx skills add dijer/6hats
 ```
 
+## Quickstart (30 seconds)
+
+Paste this to your agent, swapping in your own decision:
+
+> Run 6 hats on: <your decision or idea>
+
+That single line is enough — round count defaults to 1. Add `Rounds: N`
+(2-10) for a deeper orchestrated run, or `Constraint: <rule>` to bind every
+hat. Expected output skeleton (full method, nothing dropped):
+
+```text
+🔵 Blue        — frames the topic + what "done" means
+⚪ White        — facts, graded checked vs believed
+🔴 Red          — gut reaction, no justification
+🟡 Yellow      — benefits with reasons
+⚫ Black        — reasoned risks
+🟢 Green        — alternatives / new options
+🔵 Blue        — round review, then final synthesis + Continue Next
+```
+
+The order is fixed (White → Red → Yellow → Black → Green), always opens and
+closes with Blue, and is always the same six hats — the quickstart is a faster
+way to launch the full protocol, not a reduced one. See
+[Usage](#usage) below and [SKILL.md](SKILL.md) for the complete rules.
+
 ## Usage
 
 Trigger it by asking your agent to run a "6 hats" / "six thinking hats"
@@ -99,6 +124,8 @@ completion, available runtime cost, and protocol fidelity separately.
 
 - Use the PR checklist in [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md).
 - Keep requirement-to-eval coverage updated in [evals/TRACEABILITY.md](evals/TRACEABILITY.md).
+- Keep repository prose, prompts, and checklists in English; avoid mixed-language
+   text unless a scenario explicitly needs it.
 - Run a lightweight local docs check before opening a PR:
 
 ```bash

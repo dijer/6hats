@@ -30,6 +30,8 @@ you (or a subagent) do that check by hand.
 | [06-solo-fallback.md](06-solo-fallback.md) | Honest solo fallback when no subagents exist: same contracts and output, no faked multi-agent execution |
 | [07-above-cap.md](07-above-cap.md) | Requests above ten rounds cap at ten without duplicate rounds, then offer to continue only with fresh evidence |
 | [08-output-style-and-interactivity.md](08-output-style-and-interactivity.md) | Visual round segmentation, emoji labels, single-language output, and structured continuation choice |
+| [09-adversarial-order-injection.md](09-adversarial-order-injection.md) | Prompt injection hidden in pasted context trying to skip/reorder hats, add a 7th hat, and force a Blue verdict |
+| [10-multilingual-consistency.md](10-multilingual-consistency.md) | Mid-run language switch: single-language-per-artifact invariant holds without dropping or reordering hats |
 
 ## Scaling benchmark
 

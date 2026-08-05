@@ -133,11 +133,35 @@ Blue (synthesis)       — final conclusion + takeaways (after the last round)
 - In orchestrated rounds 2..N, Blue gives a one-line process frame before
   White naming that round's pressure packet. This is not an argument or an
   extra reasoning turn.
+- White is **graded information**, de Bono style: separate a **checked fact**
+  from a merely **believed fact**, and where it matters note the likelihood
+  (always / usually / generally / sometimes / occasionally). Later hats and the
+  synthesis must not treat a believed fact as if it were checked.
+- Yellow is **logical-positive**: every benefit needs a stated reason or
+  feasibility basis, not mood-optimism. Give the strongest genuine case for the
+  idea (steelman) so Black then attacks a real argument, not a weak one.
+- Black is **logical-negative**: reasoned risks, faults, and mismatches only —
+  emotional negativity belongs to Red. It is the most valuable hat, but must not
+  be overused to bury the idea; state each risk plainly and stop.
+- Green runs on **movement, not judgment**: don't evaluate ideas here (that's
+  Yellow's and Black's job) — move forward from them (extract the useful
+  concept, use a weak idea as a stepping-stone, apply a deliberate provocation).
+  Judging during Green kills alternatives before they can form.
 - Green should prioritize realistically executable alternatives, not
   pure fantasy.
+- **Creative escalation:** if Green would otherwise repeat alternatives
+  already on the table (roughly two rounds with no genuinely new option),
+  it must break the loop instead of restating — reach for an analogy, borrow
+  a solution from an unrelated domain, invert a fixed assumption, or offer a
+  deliberately radical option to reframe the space. Escalation still respects
+  the "realistically executable" bar in at least one of its offers; it widens
+  the search, it does not license pure fantasy. Blue notes in its round review
+  when escalation was triggered.
 
 ### Fidelity to de Bono (invariants — never break these)
 
+- A hat is a **direction to think in**, not a label pinned on an
+  already-formed opinion, and never a role assigned to a person or agent.
 - A sequence always **opens and closes with Blue**.
 - Only **one hat is "worn" at a time** — parallel thinking, never a blended
   opinion.
@@ -279,14 +303,16 @@ Topic: *"Should we switch our frontend from React to Svelte?"* — rounds: 1.
 🔵 Blue (frame): Deciding React → Svelte for the frontend. Done = a clear
 go/no-go with the top 2-3 reasons either way.
 
-⚪ White: Team is 4 devs, all know React, 0 Svelte production experience.
-Current app: ~40 components, no SSR. Migration would take ~3-4 weeks.
+⚪ White: Checked — team is 4 devs, all know React, 0 Svelte production
+experience; current app ~40 components, no SSR. Believed (not measured) —
+migration would take ~3-4 weeks.
 
 🔴 Red: Svelte sounds fun and modern. Also mild dread about learning-curve
 risk before a big release.
 
-🟡 Yellow: Smaller bundle size, less boilerplate, faster onboarding for
-new hires long-term. Could ship a snappier UI as a side benefit.
+🟡 Yellow: Smaller bundle size and less boilerplate are real, reason-backed
+wins; faster onboarding for new hires long-term because there's less API
+surface to learn. Best case: a measurably snappier UI on the same roadmap.
 
 ⚫ Black: 3-4 weeks with zero Svelte experience is optimistic — expect
 slippage. Ecosystem/libraries are thinner than React's. Risk of stalling
@@ -330,4 +356,9 @@ Continue Next
 | Hats pad or repeat points | Let each lens use the depth its material requires, then stop. |
 | User asks for a "7th hat" or a different hat order | There are only six hats and the order is fixed; fold new angles in as a constraint instead. |
 | Red hat over-explains its feeling | Red is a raw gut reaction, no reasoning — keep it the shortest turn. |
+| Green repeats the same alternatives across rounds | Trigger creative escalation: analogy, cross-domain borrow, inverted assumption, or a radical reframe — don't restate. |
+| White presents a guess as a hard fact | Grade it: mark checked fact vs believed fact, and note likelihood; later hats can't lean on a believed fact as if checked. |
+| Yellow hand-waves optimism with no reason | Yellow is logical-positive: each benefit needs a stated reason/feasibility basis, and should steelman the idea. |
+| Black turns into emotional negativity | Black is logical-negative only; gut feelings belong to Red. Reasoned risks, then stop. |
+| Green judges or dismisses an idea while generating | Green is movement, not judgment: move forward from ideas, extract the concept, use provocation — evaluate later in Yellow/Black. |
 

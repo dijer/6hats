@@ -10,6 +10,10 @@ This table maps protocol requirements to eval scenarios and expected checks.
 | Blue frames and reviews every round | SKILL.md | 01, 04, 05, 06, 07 | Blue opens; each round ends with Blue review |
 | Rounds are visually segmented for readability | SKILL.md | 04, 05, 06, 07 | Round headings and separators are present |
 | Red stays brief and non-rationalized | SKILL.md | 01, 03 | Red is shortest and not analytical |
+| White grades information (checked vs believed fact, likelihood) | SKILL.md | 03 | White separates checked facts from believed/estimated ones; later hats don't treat believed as checked |
+| Yellow is logical-positive and steelmans | SKILL.md | 03 | Each benefit has a stated reason/feasibility basis; strongest genuine case given |
+| Black is logical-negative, not emotional | SKILL.md | 03 | Reasoned risks only; no emotional negativity; idea not buried |
+| Green is movement, not judgment | SKILL.md | 03 | Green develops/extends options and uses provocation; it does not evaluate or dismiss ideas while generating |
 | Orchestrated mode for 2-10 rounds | SKILL.md, references/orchestrated-rounds.md | 04, 05 | Correct mode routing and exact count behavior |
 | Baseline is the first executed round | references/orchestrated-rounds.md | 04, 06 | Full Baseline hat sequence appears before any supporting-agent dispatch or later pressure layer |
 | Generic subagent tools enable orchestration | references/orchestrated-rounds.md | 04, 06 | Roles are carried in prompts; missing named agents never trigger solo fallback when generic spawn is available |
